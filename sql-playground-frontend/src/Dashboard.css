@@ -1,0 +1,7 @@
+#query-message {
+  transition: opacity 1s ease-in-out;
+}
+
+#query-message.fade-out {
+  opacity: 0;
+}

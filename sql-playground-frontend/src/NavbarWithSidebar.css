@@ -1,0 +1,22 @@
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  .dark-mode textarea,
+  .dark-mode .form-control {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+  }
+  
+  .dark-mode .bg-light {
+    background-color: #2c2c2c !important;
+    color: white;
+  }
+  
+  .dark-mode .navbar {
+    background-color: #242424 !important;
+    color: white;
+  }
+  

@@ -1,0 +1,489 @@
+@import "tailwindcss";
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #000000; /* Default color for light mode */
+}
+
+body.dark-mode h1 {
+  color: #ffffff; /* White color for dark mode */
+}
+
+.tabs button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #000000;
+  color: white; /* Ensure text color is always white */
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.tabs button.active {
+  background-color: #ff0000;
+  color: white; /* Keep text color white for active buttons */
+}
+
+body.dark-mode .tabs button {
+  background-color: #000000; /* Dark mode button background */
+  color: white; /* Ensure text remains white in dark mode */
+}
+
+body.dark-mode .tabs button.active {
+  background-color: rgb(255, 0, 0); /* Active button background in dark mode */
+  color: white; /* Keep text color white for active buttons in dark mode */
+}
+
+.query-history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.query-history-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+body.dark-mode .query-history-item {
+  background-color: #333;
+  color: #fff;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a90e2, #50c878);
+  color: #ffffff;
+}
+
+/* .login-container.beside-image {
+  background: url('/path/to/your/image.jpg') no-repeat center center;
+  background-size: cover;
+} */
+
+.login-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: #213547;
+}
+
+.login-card h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card input:focus {
+  border-color: #50c878;
+  outline: none;
+  box-shadow: 0 0 6px rgba(80, 200, 120, 0.5);
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #4a90e2, #50c878);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-card button:hover {
+  background: linear-gradient(135deg, #50c878, #4a90e2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-card button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-card p {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.login-card a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-card a:hover {
+  color: #50c878;
+  text-decoration: underline;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a90e2, #50c878);
+  color: #ffffff;
+}
+
+.register-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: #213547;
+}
+
+.register-card h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+.register-card input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-card input:focus {
+  border-color: #50c878;
+  outline: none;
+  box-shadow: 0 0 6px rgba(80, 200, 120, 0.5);
+}
+
+.register-card button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #4a90e2, #50c878);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-card button:hover {
+  background: linear-gradient(135deg, #50c878, #4a90e2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-card button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.register-card p {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.register-card a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.register-card a:hover {
+  color: #50c878;
+  text-decoration: underline;
+}
+
+.dashboard-container {
+  background-color: #a9b3ae; /* Default light mode background */
+  padding: 2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .dashboard-container {
+  background-color: #364756; /* Dark mode background with a darker grey shade */
+  padding: 2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #0c03aa;
+}
+
+.dashboard-header p {
+  font-size: 1.2rem;
+  color: #250939; /* Default color for light mode */
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+body.dark-mode .dashboard-header p {
+  color: #cccccc; /* Lighter text color for dark mode */
+}
+
+.dashboard-section {
+  margin-bottom: 2rem;
+}
+
+.dashboard-section h2 {
+  font-size: 1.8rem;
+  color: #2958f6;
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .dashboard-section h2 {
+  font-size: 1.8rem;
+  color: #05ff48;
+  margin-bottom: 1rem;
+}
+
+
+
+.sql-editor {
+  width: 100%;
+  height: 200px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  color: #333;
+  resize: vertical;
+}
+
+.sql-editor:focus {
+  border-color: #50c878;
+  outline: none;
+  box-shadow: 0 0 6px rgba(80, 200, 120, 0.5);
+}
+
+.sql-editor-container {
+  position: relative;
+}
+
+.generate-sql-button {
+  display: block; /* Ensure the button is visible */
+  margin-top: 1rem;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-sql-button:hover {
+  background-color: #50c878;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.generate-sql-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.query-output {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  white-space: pre-wrap;
+  font-family: monospace;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: left;
+  background-color: #d4f8e8; /* Light green background for tables */
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  border: 1px solid #813434; /* Default border color */
+}
+
+table th {
+  background-color: #b2f0d6; /* Slightly darker green for header */
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #00c875; /* Alternate row background in light green */
+}
+
+body.dark-mode table {
+  border-color: #444; /* Dark mode border color */
+  background-color: #2e4f3e; /* Darker green for dark mode */
+}
+
+body.dark-mode table th {
+  background-color: #3a6b52; /* Darker green for header in dark mode */
+  color: #ffffff; /* White text for header in dark mode */
+}
+
+body.dark-mode table tr:nth-child(even) {
+  background-color: #355d4a; /* Alternate row background in dark green */
+}
+
+body.dark-mode table tr:nth-child(odd) {
+  background-color: #2e4f3e; /* Odd row background in dark green */
+}
+
+body.dark-mode table td {
+  color: #090118; /* White text for cells in dark mode */
+  background-color: #a9d9c0;
+}
+
+.navbar-brand.text-dark {
+  color: #213547 !important;
+}
+
+.navbar-brand.text-white {
+  color: #00ff77 !important;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 2rem;
+  }
+
+  .login-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .login-card input,
+  .login-card button {
+    font-size: 0.95rem;
+  }
+
+  .register-card {
+    padding: 2rem;
+  }
+
+  .register-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .register-card input,
+  .register-card button {
+    font-size: 0.95rem;
+  }
+}
