@@ -376,6 +376,6 @@ sudo service mongodb restart
 
 ---
 
-**Made with ❤️ by [Aditya Gautam](https://github.com/Aditya-Gautam-2037)**
+**Made with ❤️ by [Aditya Gautam](https://github.com/Aditya-Gautam-2037), R. Goutham, Amit Kamble, Shivaniranjan**
 
 For support or questions, please open an issue on GitHub.
